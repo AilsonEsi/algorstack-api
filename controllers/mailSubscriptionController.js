@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const { sendConfirmationEmail } = require('../services/emailService');
 const { subscribeUser, getSubscribers } = require('../services/mailchimpService');
+require('dotenv').config();
 const tokenStore = require('../utils/tokenStore');
 
 const BASE_URL = `${process.env.BASE_URL}/v1`;
