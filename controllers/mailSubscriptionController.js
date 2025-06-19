@@ -3,7 +3,7 @@ const { sendConfirmationEmail } = require('../services/emailService');
 const { subscribeUser, getSubscribers } = require('../services/mailchimpService');
 const tokenStore = require('../utils/tokenStore');
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3000/v1';
 
 exports.getSubscribers = async (req, res) => {
   try {
