@@ -1,5 +1,7 @@
 const axios = require('axios');
-const { MAILCHIMP_API_KEY, LIST_ID, DATACENTER } = require('../config/mailchimp');
+const { LIST_ID, DATACENTER } = require('../config/mailchimp');
+
+const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
 
 const authHeader = `Basic ${Buffer.from(`anystring:${MAILCHIMP_API_KEY}`).toString('base64')}`;
 
