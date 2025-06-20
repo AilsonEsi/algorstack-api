@@ -1,9 +1,10 @@
 const crypto = require('crypto');
 const { sendConfirmationEmail } = require('../services/emailService');
 const { subscribeUser, getSubscribers } = require('../services/mailchimpService');
-require('dotenv').config();
-const tokenStore = require('../utils/tokenStore');
 
+const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
+require('dotenv').config({ path: envFile });
+const tokenStore = require('../utils/tokenStore');
 const BASE_URL = `${process.env.BASE_URL}/v1`;
 
 exports.getSubscribers = async (req, res) => {
